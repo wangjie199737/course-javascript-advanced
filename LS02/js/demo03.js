@@ -56,3 +56,4 @@ function foo4(x){
 foo4(a);
 console.log(a.y);
 //123
+   
