@@ -38,3 +38,16 @@ console.log(2 == new Number(2));
 //false
 //true
 //引用转化为基本类型
+
+var obj1={x:2,y:[1],z:false};
+var obj2={x:2,y:[1],z:new Boolean(true)};
+console.log(obj1.z==obj2.z);
+//false
+var obj1={x:2,y:[1],z:false};
+var obj2={x:2,y:[1],z:new Boolean(false)};
+console.log(obj1.z==obj2.z);
+//true
+var obj1={x:2,y:[1],z:false};
+var obj2={x:2,y:[1],z:Boolean(new Boolean(false))};
+console.log(obj1.z==obj2.z);
+//false
