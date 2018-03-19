@@ -7,11 +7,13 @@ console.log(0&&4);
 console.log({x:2}&&{name:"Jack"});
 console.log(null&&"hello");
 console.log({}&&"world");
+console.log(0>-1&&4>01);//01和1的效果一样
 //4
 //0
 //{name:"jack"}
 //null
 //"world"
+//true
 //2.||短路问题
 console.log(2||4);
 console.log(0||4);
