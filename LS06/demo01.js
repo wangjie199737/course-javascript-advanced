@@ -30,3 +30,5 @@ console.log((new Boolean(false))&&234);
 console.log((new Boolean(false))||234);
 //234
 //Boolean {false}
+console.log(NaN&&"hello");
+//NaN
