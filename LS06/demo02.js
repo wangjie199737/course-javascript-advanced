@@ -15,7 +15,7 @@ if(score>90){
 //良
 //等效以下的~
 //小括号优先级最高
-console.log((score>90&&"优")||(score>75&&"良")||(score>60&&"及格")||"不及格");
+console.log((score>90&&"优")||(score>75&&"良")||(score>60&&"及格")||"不及格");//逻辑与可以实现if
 //2.特殊的~
 var sum = function(a,b,c){
     b = b||4;
