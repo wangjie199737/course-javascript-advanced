@@ -60,7 +60,24 @@ var foo = function (a,b){
 foo(1,2,3,4);
 //4
 
+//Js中caller和callee的区别
+//caller 返回一个调用当前函数的引用 如果是由顶层调用的话 则返回null
+（//举个栗子哈 caller给你打电话的人  谁给你打电话了 谁调用了你 很显然是下面a函数的执行 只有在打电话的时候你才能知道打电话的人是谁 所以对于函数来说 只有caller在函数执行的时候才存在）
 
+      var callerTest = function() {
+          console.log(callerTest.caller) ;  
+     } ;
+     function a() {
+            callerTest() ;   
+     }
+     a() ;//输出function a() {callerTest();}
+     callerTest() ;//输出null 
+//callee 返回一个正在被执行函数的引用  （这里常用来递归匿名函数本身 但是在严格模式下不可行）
+//callee是arguments对象的一个成员 表示对函数对象本身的引用 它有个length属性（代表形参的长度）
+     var c = function(x,y) {
+             console.log(arguments.length,arguments.callee.length,arguments.callee)
+      } ;
+     c(1,2,3) ;//输出3 2 function(x,y) {console.log(arguments.length,arguments.callee.length,arguments.callee)} 
 
 //3.原型
 Object.__proto__==Function.prototype;
