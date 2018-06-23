@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <script>   
+        // window.onload=function(){
+        //     console.log("大家好，这是我的demo！");
+        //     var first=document.getElementById('first');
+        //     first.onclick=function(){
+        //         console.log('你点击了紫色部分哦！');
+        //     }
+
+        // }
+            // window.onload=function(e){
+            //     console.log("e",e);
+            //     var first=document.getElementById('first');
+            //     var pi=function(e){
+            //             console.log(e);
+            //             console.log(e.clientX,e.clientY);
+            //     }
+            //     first.onclick=pi;
+            // }
+            // --------------------------下面的事html级别的事件响应处理
+            // var f1=function(){
+            //     alert("你调用了f1函数！");
+            // }
+            // var f2=function(){
+            //     alert("你调用了f2函数！");
+            // }
+            //----------------------------下面是DOM0级别的事件响应处理
+            //
+            // window.onload=function(e){
+            //     var third=document.getElementById('third');
+            //     var p2=function(e){
+            //         console.log(e.clientX,e.clientY);
+            //     }
+            //     third.onclick=p2;
+            //     third.onclick=null;//取消事件响应处理
+            // }
+            //----------------------------下面是DOM2级别的事件响应处理
+            // window.onload=function(e){
+            //     var second=document.getElementById('second');
+            //     var p3=function(e){
+            //         console.log(e.clientX,e.clientY);
+            //     }
+            //     second.addEventListener("click",p3);
+            //     second.removeEventListener("click",p3);//取消事件相应处理
+            // }
+            //---------------------------如果是各种兼容
+            // function addEvent(ele,type,hander){
+            //     if(ele.addEventListener){
+            //         ele.addEventListener(type,hander,false);
+            //     }else if(ele.attachEvent){
+            //         ele.attachevent("on"+type,hander);
+            //     }else{
+            //         ele['on'+type]=hander;
+            //     }
+            // }
+            window.onload=function(){
+                var first=document.getElementById('first');
+                var second=document.getElementById("second");
+                first.addEventListener("click",function(e){
+                    console.log("first!!!");
+                },false);
+                second.addEventListener('click',function(){
+                    console.log("second!!!");
+                },false);//点击中间的块块：true先first然后是second；false先second然后是first
+            }
+    </script>
+    <style>
+        #first{
+           width: 200px;
+           height: 200px;
+           background-color: blueviolet;
+        }
+        #second{
+            width: 100px;
+            height: 100px;  
+            background-color: blue;
+             
+        }
+        #third{
+            width: 90px;
+            height: 90px;
+            background-color: yellow
+        }
+    </style>
+</head>
+<body>
+    <!-- html级别的事件相应处理 -->
+    <div id="first">
+        我是第一个大块哟哟哟
+        <div id="second">
+             我是第二个大块哦哦哦
+        </div>
+    </div>
+   
+    <div id="third" onclick="console.log('你点击了黄色部分哦！')">
+        我是第三个大块嘻嘻嘻
+    </div>
+</body>
+</html>
